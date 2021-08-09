@@ -1,0 +1,9 @@
+@mixin btnFocus {
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline: 3px dashed var(--white);
+    outline-offset: 3px;
+  }
+}

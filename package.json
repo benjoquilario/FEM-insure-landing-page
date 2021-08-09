@@ -1,0 +1,28 @@
+{
+  "name": "insure-landing-page-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Insure landing page coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjoquilario/fem-insure-landing-page"
+  },
+  "keyword": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.27.5",
+    "cssnano": "^5.0.7",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-terser": "^2.0.1",
+    "sass": "^1.37.5"
+  },
+  "devDependencies": {
+    "postcss": "^8.3.6"
+  }
+}

@@ -1,0 +1,34 @@
+@keyframes animationX {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes animationY {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes shake {
+  0% {
+    opacity: 0;
+    transform: translateY(4.125rem) scale(0.8) rotate(5deg);
+  }
+  50% {
+    transform: translateY(4.125rem) scale(0.8) rotate(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(4.125rem) scale(1) rotate(0deg);
+  }
+}

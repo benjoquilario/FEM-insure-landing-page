@@ -1,0 +1,51 @@
+@use '../util/' as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: rem(16);
+  font-weight: var(--font-normal);
+  font-family: var(--font-Karla);
+
+  &.no-scroll {
+    overflow: hidden;
+
+    @include breakpoint-up(medium) {
+      overflow-y: scroll;
+    }
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline: rem(3) dashed var(--darkViolet);
+  }
+}

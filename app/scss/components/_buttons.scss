@@ -1,0 +1,71 @@
+@use '../util/' as *;
+
+.btn {
+  @extend %flex-center;
+  font-size: rem(15);
+  font-weight: var(--font-bold);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 350ms ease-in, border 300ms ease-in;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: rem(3) dashed var(--darkViolet);
+    outline-offset: rem(4);
+  }
+
+  &--menu {
+    background-color: transparent;
+    transition: 0.5s;
+
+    @include breakpoint-up(medium) {
+      display: none;
+    }
+  }
+
+  &--plans {
+    width: 86vw;
+    border: rem(2) solid var(--white);
+    color: var(--white);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: rem(22);
+    height: rem(54);
+
+    @include breakpoint-up(medium) {
+      background-color: transparent;
+      width: rem(144);
+      height: rem(43);
+      color: var(--darkViolet);
+      font-size: rem(16);
+      border: rem(2) solid var(--darkViolet);
+
+      &:hover {
+        background-color: var(--darkViolet);
+        color: var(--white);
+      }
+      &:active {
+        box-shadow: inset 0 -0.25rem 0 rgba(0, 0, 0, 0.1), 0 0 1px 0.15rem #fff,
+          0 0 1px 0.3rem var(--darkViolet);
+      }
+    }
+  }
+  &--white,
+  &--cta,
+  #btn--plans {
+    background-color: transparent;
+    border: rem(2) solid var(--white);
+    color: var(--white);
+    padding: rem(9) rem(35);
+    z-index: 10;
+    &:hover {
+      background-color: var(--white);
+      color: var(--darkViolet);
+    }
+    @include btnFocus;
+  }
+}

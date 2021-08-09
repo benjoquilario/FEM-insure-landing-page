@@ -1,0 +1,180 @@
+@use '../util/' as *;
+
+.hero {
+  background-color: var(--darkViolet);
+
+  &::before {
+    content: url("/images/bg-pattern-intro-left-mobile.svg");
+    position: absolute;
+    top: 33rem;
+    left: 0;
+
+    @include breakpoint-up(medium) {
+      content: url("/images/bg-pattern-intro-left-desktop.svg");
+      position: absolute;
+      top: rem(507);
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  &::after {
+    content: url("/images/bg-pattern-intro-right-mobile.svg");
+    position: absolute;
+    bottom: rem(-557);
+    right: 0;
+    z-index: 1;
+
+    @include breakpoint-up(medium) {
+      content: url("/images/bg-pattern-intro-right-desktop.svg");
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
+
+  &__container {
+    @extend %flex-column;
+    max-width: rem(1150);
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+      padding: 0 rem(23);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    z-index: 1;
+
+    @include breakpoint-up(medium) {
+      order: 2;
+      flex: 1 0 49%;
+    }
+    &--images {
+      width: 100%;
+      object-fit: cover;
+      height: rem(454);
+      z-index: 1;
+      animation: animationY 1.8s ease;
+
+      @include breakpoint-up(medium) {
+        height: rem(501);
+        transform: translateY(3.125rem);
+        animation: shake 1s ease;
+      }
+      @include breakpoint-up(large) {
+        height: rem(600);
+        transform: translateY(6.25rem);
+        animation: shake 1s ease;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding: rem(82) rem(17);
+    text-align: center;
+    animation: animationY 1.4s ease;
+    @extend %flex-column;
+
+    @include breakpoint-up(medium) {
+      animation: animationX 1.4s ease;
+      text-align: left;
+      padding: 0;
+      padding-right: rem(23);
+      align-items: flex-start;
+      margin-top: rem(43);
+    }
+  }
+}
+
+/*--- Features Section -----*/
+.features {
+  position: relative;
+  background-color: var(--white);
+  padding: rem(292) 0 rem(165);
+
+  @include breakpoint-down(small) {
+    padding: rem(132) 0 rem(124);
+  }
+  &__container {
+    @extend %flex-column;
+    text-align: center;
+    max-width: rem(1218);
+    padding: 0 3rem;
+    @include breakpoint-up(medium) {
+      text-align: left;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+  &__feature {
+    margin-top: rem(70);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-gap: rem(47);
+
+    @media (min-width: 37.5em) {
+      grid-template-columns: 1fr 1fr;
+      justify-items: flex-start;
+      align-items: flex-start;
+    }
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &--content {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-gap: rem(30);
+
+      @include breakpoint-up(medium) {
+        justify-items: flex-start;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+/*-- cta --*/
+
+.cta {
+  position: relative;
+  padding: 0 rem(20);
+  &__container {
+    @extend %flex-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-image: url("/images/bg-pattern-how-we-work-mobile.svg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: var(--darkViolet);
+    padding: rem(80) rem(20);
+    height: rem(360);
+    width: 100%;
+
+    @include breakpoint-up(medium) {
+      background-image: url("/images/bg-pattern-how-we-work-desktop.svg");
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: auto;
+    }
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+      padding: rem(20) rem(116);
+      height: rem(260);
+      text-align: left;
+    }
+  }
+}

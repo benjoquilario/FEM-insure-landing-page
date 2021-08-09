@@ -1,0 +1,18 @@
+@use '../util/' as *;
+.container {
+  max-width: rem(1140);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.divider {
+  width: rem(151);
+  height: rem(3);
+  background-color: var(--grayishBlue);
+  margin-bottom: rem(30);
+
+  @include breakpoint-up(medium) {
+    margin-left: 0;
+  }
+}
